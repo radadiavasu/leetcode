@@ -1,3 +1,5 @@
+########## Testing ##########
+
 # def main(arr, n):
 #     visited = [False for i in range(n)]
     
@@ -21,7 +23,7 @@
 #     main(arr, n)
 
 
-# 1. Find frequencies of each inlcuding duplicate elements. Let's solve it.
+########## 1. Find frequencies of each inlcuding duplicate elements. Let's solve it. ##########
 
 # arr = [1,2,2,3,1,4]
 # element_count = {}
@@ -36,7 +38,9 @@
 #     print(f"{key}, {value}")
 
 
-# Contain Duplicate. Let's solve it.
+#----------------------------------->
+# Contain Duplicate. Let's solve it.#
+#<-----------------------------------
 
 # nums = [1,2,3,1]
 # ele = len(nums)
@@ -47,7 +51,7 @@
 #     print(True)
     
 
-# 1. Find Common elements form 2 arrays. Let's solve it.
+########## 1. Find Common elements form 2 arrays. Let's solve it. ##########
 
 # nums1 = [1,2,3]
 # nums2 = [2,4]
@@ -71,7 +75,7 @@
 #     print(common)
 
 
-# 2. Find minimum common values form 2 arrays. Let's solve it.
+########## 2. Find minimum common values form 2 arrays. Let's solve it. ##########
 
 # nums1 = [1,2,3]
 # nums2 = [2,4]
@@ -87,7 +91,9 @@
 #     print(-1)
 
 
-# 1. Intersaction of two arrays. Let's solve it.
+#----------------------------------------------->
+# 1. Intersaction of two arrays. Let's solve it.#
+#<-----------------------------------------------
 
 # nums1 = [4,9,5]
 # nums2 = [9,4,9,8,4]
@@ -103,12 +109,15 @@
 #     print([])
 
 
+########## Testing ##########
 # nums = [2,2,1]
 
 # print(2*sum(set(nums))-sum(nums))
 
 
-# Is Subsequence        
+#---------------->
+# Is Subsequence.#
+#<----------------
 
 # n,m = len(s), len(t)
 # i,j = 0,0
@@ -119,7 +128,9 @@
 # print(i == n)
 
 
-# Match word patterns
+#--------------------->
+# Match word patterns.#
+#<---------------------
 
 # pattern = "abba"; s = "dog cat cat dog"
 
@@ -145,7 +156,9 @@
 # print(True)   
 
 
-# Valid Anagram
+#--------------->
+# Valid Anagram.#
+#<---------------
 
 # s = "anagrams"; t="nagramas"
 
@@ -157,6 +170,7 @@
 #     print(False)
 
 
+########## Testing ##########
 # s = "4193"
 
 # digit = []
@@ -167,7 +181,9 @@
 # print(digit)
 
 
-# Find majority element
+#----------------------->
+# Find majority element.#
+#<-----------------------
 
 # from collections import Counter
 # s = [1,2,3,4,4,4,3]
@@ -180,7 +196,7 @@
 # print(key)
 
 
-# 2. Second way
+########## 2. Second way ##########
 
 # s = [1,2,3,4,4,4,3]; target = 4
 # count = 0
@@ -190,7 +206,7 @@
 # # print(max(list(s)))
 # print(s)
 
-# 3. Third way
+########## 3. Third way ##########
 
 # s = [1,2,2,3,3,4,4]
 
@@ -206,9 +222,11 @@
 #     if store[j] > 1:
 #         print(j)
   
+  
+#------------------------>
+# Search insert position.#
+#<------------------------
 
-# Search insert position
-      
 # import bisect      
 # nums = [1,3,4,5,3,5,6]
 # target = 2
@@ -217,7 +235,7 @@
 # print(insert)
 
 
-# 2. Another method.
+########## 2. Another method. ##########
 
 # l = len(nums)
 # r = len(nums)
@@ -233,7 +251,9 @@
 # print(mid)
 
 
-# Single number
+#--------------->
+# Single number.#
+#<---------------
 
 # from collections import Counter
 # nums = [2,1,2,5]
@@ -244,7 +264,9 @@
 # print(ans)
 
 
-# Add Digits
+#------------>
+# Add Digits.#
+#<------------
 
 # nums = 38
 
@@ -253,13 +275,15 @@
 # print(ans)
 
 
-# Remove Duplicate Letters
+#-------------------------->
+# Remove Duplicate Letters.#
+#<--------------------------
 
 # s = "cbacdcbc"
 # print(sorted(set(str(s))))
 
 
-# 1. First method
+########## 1. First method ##########
 
 # s = "cbacdcbc"
 # ans = []
@@ -271,7 +295,9 @@
 # print(ans)
 
 
-# Add Strings
+#------------->
+# Add Strings.#
+#<-------------
 
 # num1 = "456"
 # num2 = "77"
@@ -293,7 +319,9 @@
 # print(a)
 
 
-# Find the Duplicate elements in an array.
+#----------------------------------------->
+# Find the Duplicate elements in an array.#
+#<-----------------------------------------
 
 # Getting index number of duplicates.
 # nums = [1,1,2,3,4,4]
@@ -303,7 +331,7 @@
 #         dupu.append(n)
 # print(dupu)
 
-# 2. Getting both duplicate values i.e [1,2,3,4,4], o/p [4,4]
+########## 2. Getting both duplicate values i.e [1,2,3,4,4], o/p [4,4] ##########
 
 # nums = [1,1,2,3,4,4]
 # dupu = []
@@ -312,7 +340,7 @@
 #         dupu.append(i)
 # print(dupu)
 
-# 3. Finally getting duplicates in list.
+########## 3. Finally getting duplicates in list. ##########
 
 # nums = [1,1,2,3,4,4]
 # dupu = []
@@ -331,7 +359,9 @@
 #         print(dupu.add(i))
 
 
-# Keyboard Row
+#-------------->
+# Keyboard Row.#
+#<--------------
 
 # def find_words(words):
 #     row_mapping = {
@@ -353,7 +383,9 @@
 # print("Matching words:", matching_words)
 
 
-# Teemo Attacking
+#----------------->
+# Teemo Attacking.#
+#<-----------------
 
 # work for just first test case.
 
@@ -373,7 +405,9 @@
 # print(total)
 
 
-# Student attendence record 1
+# ---------------------------->
+# Student attendence record 1.#
+#<------------------------------
 
 # s = "PPAAAALL"
 
@@ -386,8 +420,9 @@
 #     print(True)
 
 
-# Most Booked Hotel Room
-
+#------------------------>
+# Most Booked Hotel Room.#
+#<------------------------
 
 # n = ["+1A", "+3E", "-1A", "+4F", "+1A", "-3E"]
 
@@ -411,12 +446,14 @@
 
 # Second Way
 
-
+########## Testing ##########
 # Single Number
 
 # a = [2,2,1]
 
-# Reverse Words in a String
+#--------------------------->
+# Reverse Words in a String.#
+#<---------------------------
 
 # First method
 
@@ -428,7 +465,7 @@
 # print(" ". join(s.split()[::-1]))
 
 
-# Second method
+########## Second method ##########
 
 # s = "the sky is blue"
 # spliting = s.split()
@@ -482,7 +519,8 @@
 # print([])
 
 
-# 2. Second Way
+########## 2. Second Way ##########
+
 # nums = [-1,0]
 # target = -1
 # for i, j in enumerate(nums,1):
@@ -529,7 +567,7 @@
 # print(result + sign * num)
 
 
-# 2. Second method
+########## 2. Second method ##########
 
 ###### It may conflit in larger inputs ######
 
@@ -575,7 +613,7 @@
 # print(empty)
 
 
-# 2. Final result.
+########## 2. Final result. ##########
 
 # nums = [-1,0,1,2,-1,-4]
 # nums.sort()
@@ -725,7 +763,7 @@
 # Longest Common Sequence.
 #<------------------------#
 
-# 1. Working.
+########## 1. Working. ##########
 
 # nums = [100,4,200,1,3,2]
 
@@ -752,7 +790,7 @@
 # print(ans)
 
 
-# 2. Working and very easy solution.
+######### 2. Working and very easy solution. #########
 
 # nums = [100,4,200,1,3,2]
 
@@ -872,6 +910,7 @@
 # obj = findPositive(nums)
 # print(obj) 
 
+
 #--------------->
 # Relative Ranks.
 #<---------------
@@ -989,6 +1028,7 @@
 #--------------------->
 # Trapping Rain Water.#
 #<---------------------
+
 # def containwater(height):
 
 #     left = 0
