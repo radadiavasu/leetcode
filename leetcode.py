@@ -387,11 +387,26 @@
 # Teemo Attacking.#
 #<-----------------
 
-# work for just first test case.
-
 # timeSeries = [1,4]
 # duration = 2
 
+# td = 0
+# n = len(timeSeries)
+
+# for i in range(n-1):
+#     if timeSeries[i+1] - timeSeries[i] < duration :
+#         td += timeSeries[i+1] - timeSeries[i] < duration
+#     else:
+#         td += duration
+        
+# td += duration
+# print(td)
+
+
+################# work for just first test case. #################
+
+# timeSeries = [1,4]
+# duration = 2
 # i = len(timeSeries), 0
 # j = len(timeSeries), 0
 
@@ -1076,3 +1091,9 @@
 #         final.append(False)
 # print(final)
         
+nums = [2,2,1]
+
+
+for i in nums:
+    nums[i] ^= i
+print(i)
