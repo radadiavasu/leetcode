@@ -1090,10 +1090,58 @@
 #     else:
 #         final.append(False)
 # print(final)
-        
-nums = [2,2,1]
 
 
-for i in nums:
-    nums[i] ^= i
-print(i)
+#------------->
+# Single Number
+#<-------------
+
+# Working Condition
+
+# nums = [2,2,1]
+# total = 0
+# for i in nums:
+#     total ^= i
+    
+# print(total)
+
+
+# 1. Another method with popping occurences
+
+# def singleNumber(nums) :
+#      for _ in range(len(nums)):
+#         if len(nums)< 2:
+#             return nums[0]
+#         else:
+#             popping = nums.pop()
+#         try:
+#             nums.remove(popping)
+#         except:
+#             return popping
+
+# nums = [2,1,2]
+# obj = singleNumber(nums)
+# print(obj)
+
+
+# 2. Another method with using `collections` module.
+
+# from collections import Counter
+
+# nums = [4,2,1,2,1,2]
+
+# counter = Counter(nums)
+# for i, j in counter.items():
+#     if j > 1:
+#         continue
+#     else:
+#         print(i)
+
+
+########## Work in my code space not in leetcode. ##########
+
+# nums = [2,2,1]
+
+# for i in nums:
+#     nums[i] ^= i
+# print(i)
