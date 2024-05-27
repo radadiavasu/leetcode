@@ -1146,6 +1146,7 @@
 #     nums[i] ^= i
 # print(i)
 
+
 #------------------------------------------------------>
 # Special Array With X Elements Greater Than or Equal X
 #<------------------------------------------------------
@@ -1179,3 +1180,46 @@
 #         print(i)
         
 # print(-1)
+
+
+# 3. Third method (with Binary search + Linear search)
+
+# Binary search on possible values of n.
+# Then use Linear search to count ele that are grerater than or equal to n.
+
+# nums = [0,4,3,0,4]
+# nums.sort()
+# n = len(nums)
+
+# l, h = 0, n
+
+# count possible values of n.
+# while l <= h:
+#     m = (l+h) // 2
+
+# count elements that are >= n.
+#     count = 0
+#     for num in nums:
+#         if num >= m:
+#             count += 1
+            
+#     if count == m:
+#         print(m)
+        
+#     elif count > m:
+#         l = m +1
+#     else:
+#         h = m-1
+# print(-1)
+
+
+# 4. Fourth method
+
+# nums = [0,4,3,0,4]
+# nums.sort(reverse=True)
+# n = 0
+
+# while n < len(nums) and nums[n] > n:
+#     n+=1
+    
+# print(-1) if n < len(nums) and nums[n] == n else n
