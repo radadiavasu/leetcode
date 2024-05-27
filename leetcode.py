@@ -1145,3 +1145,37 @@
 # for i in nums:
 #     nums[i] ^= i
 # print(i)
+
+#------------------------------------------------------>
+# Special Array With X Elements Greater Than or Equal X
+#<------------------------------------------------------
+
+# 1. First method
+
+# nums = [0,4,3,0,4]
+# nums.sort()
+# n = len(nums)
+
+# for i in range(n+1):
+#     count = 0
+#     for num in nums:
+#         if num >= i:
+#             count +=1
+#     if count == i:
+#         print(i)
+# print(-1)
+
+
+# 2. Second method
+
+# nums = [0,4,3,0,4]
+# nums.sort()
+# n = len(nums)
+
+# for i in range(n+1):
+#     count = (1 for num in nums if num >= i)
+    
+#     if count == i:
+#         print(i)
+        
+# print(-1)
