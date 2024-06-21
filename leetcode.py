@@ -1223,3 +1223,294 @@
 #     n+=1
     
 # print(-1) if n < len(nums) and nums[n] == n else n
+
+
+# s = "10"
+
+# result = int(s, 2)
+# print(result)
+# count = 0
+
+# while result != 1:
+#     count += 1
+#     if result % 2 == 0:
+#         result //=2
+#     else:
+#         result+=1
+# print(count)
+
+
+#------------------>
+# 1. Single Number 3
+#<------------------
+
+# from collections import Counter
+# nums = [1,1,2,3,2,5]
+
+# counts = Counter(nums)
+# print(counts)
+# unique = [num for num in counts if counts[num] == 1]
+# print(unique)
+# # for i in range(len(unique)):
+# #     for j in range(i+1, len(unique)):
+# #         if unique[i] ^ unique[j] != 0:
+# #             print([unique[i], unique[j]])
+    
+# # print([])
+
+
+# 2. Second method with using set.
+
+# nums = [1,1,2,3,2,5]
+
+# dupu = set()
+
+# for i in nums:
+#     if i in dupu:
+#         # print(dupu)
+#         dupu.remove(i)
+#         # print(dupu)
+#     else:
+#         # print(dupu)
+#         dupu.add(i)
+#         # print(dupu)
+        
+# # print(list(dupu))
+
+
+# 3. Third method with using list.
+
+# nums = [1,1,2,3,2,5]
+
+# store = []
+
+# for i in nums:
+#     if i in store:
+#         # print(store)
+#         store.remove(i)
+#         # print(store)
+#     else:
+#         # print(dupu)
+#         store.append(i)
+#         # print(store)
+        
+# print(store)
+
+
+#----------------->
+# Number Complement
+#<-----------------
+
+# 1. First method
+
+# num = 1
+
+# binary_str = format(num, 'b')
+
+# complement_bit = ''
+# for i in binary_str:
+#     if i == '0':
+#         complement_bit+='1'
+#     else:
+#         complement_bit+='0'
+        
+# total_comp_sum = int(complement_bit, 2)
+
+# print(total_comp_sum)
+
+
+# 2. Second method
+
+# num = 1
+
+# binary_str = format(num, 'b')
+
+# complement_bit = ''
+# for i in binary_str: 
+#   if i not in complement_bit or i in binary_str:
+#     if i == '0':
+#         complement_bit+='1'
+#     else:
+#         complement_bit+='0'
+        
+# total_comp_sum = int(complement_bit, 2)
+
+# print(total_comp_sum)
+
+
+# s = "hello"
+# count = 0
+
+# for i in range(1, len(s)):
+#     count+= abs(ord(s[i-1]) -  ord(s[i]))
+# print(count)
+
+
+# 2. Second method with while loop.
+
+# s = "hello"
+
+# count = 0
+# i = 0
+# while i < len(s) -1: # 0 < 4. Condition is true.
+#     count+= abs(ord(s[i]) -  ord(s[i+1])) # Add count value with get ASCII value like abs(ord(h) - ord(e))  h = '104 - e = 101 and move until the len.
+#     i+=1 # Increase the pointer to move like e -> l, l -> l, l -> o.
+# print(count) # return or print(for testing) the total count
+
+
+# 3. Third method with using list.
+
+# s = "hello"
+
+# lists = []
+
+# for i in range(len(s)):
+#     lists.append(ord(s[i])) # ['104', '101', '108', '108', '111'].
+    
+# count = 0
+# for i in range(len(s)-1): # end of the length which means at ['111'].
+#     count += abs(lists[i] - lists[i+1])  # Then adding total count of substracting ASCII values each.
+#                                             # Like |104 - 101| + |101 - 108| + |108 - 108| + |108 - 111|
+#                                             # = 3 + 7 + 0 + 3 = 13.
+# print(count) # return final value of count.
+
+# import math
+# n = 49
+
+# ans = math.sqrt(n)
+# if ans.is_integer():
+#     print(ans)
+# else:
+#     print(False)
+
+# print(math.sqrt(27**2 + 39**2))
+# print(27*2 + 39*2)
+# # n = 27
+# p = 39
+
+# print(math.sqrt(n**2 + p**2))
+
+
+# nums = [23, 2, 6, 4, 7]; k = 13
+
+# p = 0
+# j = 1
+
+# for _ in range(p, j):
+#     ans1 = nums[p] % k
+#     ans = nums[p] + nums[j]
+#     final = ans%k
+#     j+=1
+# print(ans1)
+# print(final)
+    
+    
+    
+    
+# print(25%13)
+
+
+# seats = [3, 1, 5]; students = [2,7,4]
+
+# seats.sort()
+# students.sort()
+
+# count = 0
+
+# for i in range(len(students)):
+#     count += abs(seats[i] - students[i])
+# print(count)
+
+
+"""
+Example 1:
+
+Input: event1 = ["01:15","02:00"]; event2 = ["02:00","03:00"]
+Output: true
+Explanation: The two events intersect at time 2:00.
+Example 2:
+
+Input: event1 = ["01:00","02:00"]; event2 = ["01:20","03:00"]
+Output: true
+Explanation: The two events intersect starting from 01:20 to 02:00.
+Example 3:
+
+Input: event1 = ["10:00","11:00"]; event2 = ["14:00","15:00"]
+Output: false
+Explanation: The two events do not intersect.
+"""
+
+# event1 = ["10:00","11:00"]; event2 = ["10:50","15:00"]
+
+
+# maxu = max(event2)
+# store = []
+
+# h1, m1 = event1
+# h2, m2 = event2
+# print(h2 <= h1 <= m2 or h1 <= h2 <= m1)
+
+
+#---->
+# IPO
+#<----
+
+# import heapq
+# k = 2; w = 0; profits = [1,2,3]; capital = [0,1,1]
+
+# projects = list(zip(capital, profits)) # [(0,1), (1,2), (1,3)]
+
+# projects.sort(key=lambda x: x[0])
+
+# total_heap = []
+
+# index = 0
+# for _ in range(k):
+#     while index < len(projects) and projects[index][0] <= w:
+#         heapq.heappush(total_heap, -projects[index][1])
+#         index +=1
+        
+#     if not total_heap:
+#         break
+
+#     w += -heapq.heappop(total_heap)
+    
+# print(w)
+
+
+#---------------------->
+# Grumpy Bookstore Owner
+#<----------------------
+
+# customers = [1,0,1,2,1,1,7,5]; grumpy = [0,1,0,1,0,1,0,1]; minutes = 3
+# # customers = [4,10,10]; grumpy = [1,1,0]; minutes = 2
+
+# n = len(customers)
+
+# count = 0
+# for i in range(n):
+#     if grumpy[i] == 0:
+#         count += customers[i]
+#         # print(customers[i])
+#         # print(count)
+        
+# aditional_satisfy = 0
+# curr_window_satisfy = 0
+
+# for i in range(minutes):
+#     if grumpy[i] == 1:
+#         curr_window_satisfy += customers[i] if grumpy[i] == 1 else 0
+# aditional_satisfy = curr_window_satisfy
+# # print(customers[i])
+
+# for i in range(minutes, n):
+#     if grumpy[i] == 1:
+#         curr_window_satisfy += customers[i]
+#     if grumpy[i-minutes] == 1:
+#         curr_window_satisfy -= customers[i-minutes]
+        
+#     aditional_satisfy = max(aditional_satisfy, curr_window_satisfy)
+# # print(aditional_satisfy)
+# total = count + aditional_satisfy
+
+# print(total)
