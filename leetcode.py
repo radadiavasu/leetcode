@@ -1514,3 +1514,60 @@ Explanation: The two events do not intersect.
 # total = count + aditional_satisfy
 
 # print(total)
+
+
+#----------------------->
+# Don't Know. Very Sorry.
+#<-----------------------
+
+# nums = [8,2,4,7]; limit = 4
+# # nums = [10,1,2,4,7,2]; limit = 5
+# # nums = [4,2,2,2,4,4,2,2]; limit = 0
+
+# i=0
+
+# max_len = 0
+# for p in range(len(nums)):
+#     while max(nums[i:p+1]) - min(nums[i:p+1]) > limit:
+#         i+=1
+#         # print(nums[p])
+#     current = p - i +1
+#     print(current)
+#     max_len = max(max_len, current)
+# # print(max_len)
+
+
+#----------------------------------->
+# Connect n ropes with minimum costs
+#<-----------------------------------
+
+# def heaps(rope) -> int:
+#     import heapq
+#     heapq.heapify(rope)
+#     total = 0
+#     while len(rope) >= 2:
+#         first_rope, second_rope = heapq.heappop(rope), heapq.heappop(rope)
+#         total += first_rope + second_rope
+#         heapq.heappush(rope, first_rope + second_rope)
+#     return total
+
+# rope = [4,3,2,6]
+# print(heaps(rope))
+
+
+#-------------------------------------------------------------------->
+# Minimum Difference Between Largest and Smallest Value in Three Moves
+#<--------------------------------------------------------------------
+
+nums = [5,3,2,4]
+
+if len(nums) <= 4: print(0)
+
+nums.sort()
+infi = float("inf")
+
+infi = min(infi, abs(nums[0] - nums[-4]))
+infi = min(infi, abs(nums[1] - nums[-3]))
+infi = min(infi, abs(nums[2] - nums[-2]))
+infi = min(infi, abs(nums[3] - nums[-1]))
+print(infi)
