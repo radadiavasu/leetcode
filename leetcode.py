@@ -1559,15 +1559,108 @@ Explanation: The two events do not intersect.
 # Minimum Difference Between Largest and Smallest Value in Three Moves
 #<--------------------------------------------------------------------
 
-nums = [5,3,2,4]
+# nums = [5,3,2,4]
 
-if len(nums) <= 4: print(0)
+# if len(nums) <= 4: print(0)
 
-nums.sort()
-infi = float("inf")
+# nums.sort()
+# infi = float("inf")
 
-infi = min(infi, abs(nums[0] - nums[-4]))
-infi = min(infi, abs(nums[1] - nums[-3]))
-infi = min(infi, abs(nums[2] - nums[-2]))
-infi = min(infi, abs(nums[3] - nums[-1]))
-print(infi)
+# infi = min(infi, abs(nums[0] - nums[-4]))
+# infi = min(infi, abs(nums[1] - nums[-3]))
+# infi = min(infi, abs(nums[2] - nums[-2]))
+# infi = min(infi, abs(nums[3] - nums[-1]))
+# print(infi)
+
+
+# n = 1000000000
+# counting = 0
+
+# for i in range(n+1):
+#     counting += str(i).count('1')
+    
+# print(counting)
+
+
+# count = 0
+# factor = 1
+
+# while factor <= n:
+#     lower_numbers = n - (n // factor) * factor
+#     current_digit = (n // factor) % 10
+#     higher_numbers = n // (factor * 10)
+    
+#     if current_digit == 0:
+#         count += higher_numbers * factor
+#     elif current_digit == 1:
+#         count += higher_numbers * factor + lower_numbers + 1
+#     else:
+#         count += (higher_numbers + 1) * factor
+    
+#     factor *= 10
+
+# print(count) 
+
+
+# n = 4
+# time = 5
+
+# direction = time // n - 1
+# print(direction)
+
+# # if direction % 2 == 0: # 0 Condition is True
+# print( 1 + time % (n - 1)) 
+# # else:
+# print( n - time % (n - 1))
+
+
+#-------------------->
+# Average Waiting Time
+#<--------------------
+
+""" # Example Walkthrough :
+
+**Customer 1**:
+
+• Arrival time: 1
+• Preparation time: 2
+The chef starts preparing the order immediately at time 1.
+• Finish time: 1 + 2 = 3
+• Waiting time: 3 - 1 = 2
+
+**Customer 2**:
+
+• Arrival time: 2
+• Preparation time: 5
+The chef is busy until time 3. The chef starts preparing the order at time 3.
+• Finish time: 3 + 5 = 8
+• Waiting time: 8 - 2 = 6
+
+**Customer 3**:
+
+• Arrival time: 4
+• Preparation time: 3
+The chef is busy until time 8. The chef starts preparing the order at time 8.
+• Finish time: 8 + 3 = 11
+• Waiting time: 11 - 4 = 7
+
+**Average Waiting Time Calculation**:
+
+• Total waiting time: 2 + 6 + 7 = 15
+• Number of customers: 3
+• Average waiting time: 15 / 3 = 5.00000"""
+
+customers = [[1, 2], [2, 5], [4, 3]]
+time = 0
+waiting = 0
+
+for arrival, prep in customers:
+    if time < arrival:
+        time = arrival
+    time += prep
+    waiting_time = time - arrival
+    waiting += waiting_time
+    
+average = waiting / len(customers)
+print(average)
+    
