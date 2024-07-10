@@ -1686,6 +1686,7 @@ The chef is busy until time 8. The chef starts preparing the order at time 8.
 
 
 # 2. Second method with using stack
+
 # stack = []
 # for i in logs:
 #     if i == "../" and stack:
