@@ -1650,17 +1650,65 @@ The chef is busy until time 8. The chef starts preparing the order at time 8.
 • Number of customers: 3
 • Average waiting time: 15 / 3 = 5.00000"""
 
-customers = [[1, 2], [2, 5], [4, 3]]
-time = 0
-waiting = 0
+# customers = [[1, 2], [2, 5], [4, 3]]
+# time = 0
+# waiting = 0
 
-for arrival, prep in customers:
-    if time < arrival:
-        time = arrival
-    time += prep
-    waiting_time = time - arrival
-    waiting += waiting_time
+# for arrival, prep in customers:
+#     if time < arrival:
+#         time = arrival
+#     time += prep
+#     waiting_time = time - arrival
+#     waiting += waiting_time
     
-average = waiting / len(customers)
-print(average)
-    
+# average = waiting / len(customers)
+# print(average)
+
+
+#------------------>
+# Crawler Log Folder
+#<------------------
+
+# logs = ["d1/","d2/","../","d21/","./"]
+# logs = ["d1/","d2/","./","d3/","../","d31/"]
+# logs = ["d1/","../","../","../"]
+
+# count = 0
+# for i in logs:
+#     if i == "../":
+#         if count > 0:
+#             count -=1
+#     elif i == "./":
+#         pass
+#     else:
+#         count += 1
+# print(count)
+
+
+# 2. Second method with using stack
+# stack = []
+# for i in logs:
+#     if i == "../" and stack:
+#         stack.pop()
+#     elif i[0] != ".":
+#         stack.append(i)
+# print(len(stack))
+
+
+# 3. Third method with using regex.
+
+# import re
+# count = 0
+# parent_dir = re.compile(r'\.\./')
+# same_dir = re.compile(r'\./')
+# child_dir = re.compile(r'[^./]+/')
+
+# for i in logs:
+#     if parent_dir.match(i):
+#         if count > 0:
+#             count -=1 
+#     elif same_dir.match(i):
+#         continue
+#     elif child_dir.match(i):
+#         count += 1
+# print(count)
