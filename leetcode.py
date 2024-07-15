@@ -1713,3 +1713,30 @@ The chef is busy until time 8. The chef starts preparing the order at time 8.
 #     elif child_dir.match(i):
 #         count += 1
 # print(count)
+
+
+#------------------------------------>
+# Find the Winner of the Circular Game
+#<------------------------------------
+
+# n = 5; k = 2
+# n = 6; k = 5
+
+# friends = list(range(1, n + 1))
+# index = 0
+
+# while len(friends) > 1:
+#     index = (index + k -1) % len(friends)
+#     friends.pop(index)
+# print(friends[0])
+
+
+# Second Method
+
+# index = 0
+
+# for i in (range(1, n + 1)):
+#     index = (index + k) % i
+# print(index + 1)
+
+
