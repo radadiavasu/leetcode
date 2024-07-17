@@ -1811,50 +1811,51 @@ The chef is busy until time 8. The chef starts preparing the order at time 8.
 # Delete Nodes And Return Forest
 #<------------------------------
 
-from typing import Optional, List
+# from typing import Optional, List
 
-class TreeNode:
-    def __init__(self, val=0, left=None, right=None):
-        self.val = val
-        self.left = left
-        self.right = right
-class Solution:
-    def delNodes(self, root: Optional[TreeNode], to_delete: List[int]) -> List[TreeNode]:
-        store = []
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+# class Solution:
+#     def delNodes(self, root: Optional[TreeNode], to_delete: List[int]) -> List[TreeNode]:
+#         store = []
         
-        def dfs(node, to_root):
-            if not node:
-                return None
+#         def dfs(node, to_root):
+#             if not node:
+#                 return None
             
-            deletes = node.val in to_delete
+#             deletes = node.val in to_delete
             
-            if to_root and not deletes:
-                store.append(node)
+#             if to_root and not deletes:
+#                 store.append(node)
             
-            node.left = dfs(node.left, deletes)
-            node.right = dfs(node.right, deletes)
+#             node.left = dfs(node.left, deletes)
+#             node.right = dfs(node.right, deletes)
             
-            return None if deletes else node
+#             return None if deletes else node
         
-        dfs(root, True)
-        return store
+#         dfs(root, True)
+#         return store
     
     
-root = TreeNode(1)
-root.left = TreeNode(2)
-root.right = TreeNode(3)
-root.left.left = TreeNode(4)
-root.left.right = TreeNode(5)
-root.right.left = TreeNode(6)
-root.right.right = TreeNode(7)
+# root = TreeNode(1)
+# root.left = TreeNode(2)
+# root.right = TreeNode(3)
+# root.left.left = TreeNode(4)
+# root.left.right = TreeNode(5)
+# root.right.left = TreeNode(6)
+# root.right.right = TreeNode(7)
 
-solution = Solution()
-forest = solution.delNodes(root, [3, 5])
-# Convert forest to list of lists for easier visualization
-def convert_to_list(node):
-    if not node:
-        return None
-    return [node.val, convert_to_list(node.left), convert_to_list(node.right)]
+# solution = Solution()
+# forest = solution.delNodes(root, [3, 5])
 
-forest_list = [convert_to_list(tree) for tree in forest]
-print(forest_list) 
+# Converting Lists
+# def convert_to_list(node):
+#     if not node:
+#         return None
+#     return [node.val, convert_to_list(node.left), convert_to_list(node.right)]
+
+# forest_list = [convert_to_list(tree) for tree in forest]
+# print(forest_list) 
