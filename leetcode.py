@@ -1740,3 +1740,121 @@ The chef is busy until time 8. The chef starts preparing the order at time 8.
 # print(index + 1)
 
 
+#---------------------------------------------------------->
+# Step-By-Step Directions From a Binary Tree Node to Another
+#<----------------------------------------------------------
+
+# Definition for a binary tree node.
+# from typing import Optional
+
+
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+# class Solution:
+#     def getDirections(self, root: Optional[TreeNode], sv: int, dv: int) -> str:
+#         def find_path(root: TreeNode, target: int, path: list) -> bool:
+#             if not root:
+#                 return False
+#             if root.val == target:
+#                 return True
+            
+#             path.append("L")
+#             if find_path(root.left, target, path):
+#                 return True
+#             path.pop()
+
+#             path.append("R")
+#             if find_path(root.right, target, path):
+#                 return True
+#             path.pop()
+#             return False
+        
+#         start_path = []
+#         dest_path = []
+#         find_path(root, sv, start_path)
+#         find_path(root, dv, dest_path)
+        
+#         i = 0
+#         # Way to LCA
+#         while i < len(start_path) and i < len(dest_path) and start_path[i] == dest_path[i]:
+#             i += 1
+        
+#         start_LCA = "U" * (len(start_path) - i)
+#         from_LCA_to_dest_path = "".join(dest_path[i:])
+        
+#         return start_LCA + from_LCA_to_dest_path
+   
+# # For Case: 1 
+# root = TreeNode(5)
+# root.left = TreeNode(1)
+# root.right = TreeNode(2)
+# root.left.left = TreeNode(3)
+# root.right.left = TreeNode(6)
+# root.right.right = TreeNode(4)
+
+# solution = Solution()
+# print(solution.getDirections(root, 3, 6))
+
+
+# # For Case: 2 
+# root = TreeNode(2)
+# root.left = TreeNode(1)
+
+# solution = Solution()
+# print(solution.getDirections(root, 2, 1))
+
+
+#------------------------------>
+# Delete Nodes And Return Forest
+#<------------------------------
+
+from typing import Optional, List
+
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+class Solution:
+    def delNodes(self, root: Optional[TreeNode], to_delete: List[int]) -> List[TreeNode]:
+        store = []
+        
+        def dfs(node, to_root):
+            if not node:
+                return None
+            
+            deletes = node.val in to_delete
+            
+            if to_root and not deletes:
+                store.append(node)
+            
+            node.left = dfs(node.left, deletes)
+            node.right = dfs(node.right, deletes)
+            
+            return None if deletes else node
+        
+        dfs(root, True)
+        return store
+    
+    
+root = TreeNode(1)
+root.left = TreeNode(2)
+root.right = TreeNode(3)
+root.left.left = TreeNode(4)
+root.left.right = TreeNode(5)
+root.right.left = TreeNode(6)
+root.right.right = TreeNode(7)
+
+solution = Solution()
+forest = solution.delNodes(root, [3, 5])
+# Convert forest to list of lists for easier visualization
+def convert_to_list(node):
+    if not node:
+        return None
+    return [node.val, convert_to_list(node.left), convert_to_list(node.right)]
+
+forest_list = [convert_to_list(tree) for tree in forest]
+print(forest_list) 
