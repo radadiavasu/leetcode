@@ -1859,3 +1859,50 @@ The chef is busy until time 8. The chef starts preparing the order at time 8.
 
 # forest_list = [convert_to_list(tree) for tree in forest]
 # print(forest_list) 
+
+
+#------------------------------->
+# Number of Good Leaf Nodes Pairs
+#<-------------------------------
+
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+# class Solution:
+#     def countPairs(self, root: TreeNode, distance: int) -> int:
+        
+#         def dfs(node):
+#             if not node:
+#                 return []
+#             if not node.left and not node.right:
+#                 return [1]
+            
+#             lefts = dfs(node.left)
+#             rights = dfs(node.right)
+            
+#             for l in lefts:
+#                 for r in rights:
+#                     if l + r <= distance:
+#                         self.count += 1
+                        
+                    
+#             return [d + 1 for d in lefts + rights]
+        
+#         self.count = 0
+#         dfs(root)
+#         return self.count
+    
+# root = TreeNode(1)
+# root.left = TreeNode(2)
+# root.right = TreeNode(3)
+# root.left.left = TreeNode(4)
+# root.left.right = TreeNode(5)
+# root.right.left = TreeNode(6)
+# root.right.right = TreeNode(7)
+
+# sol = Solution()
+# print(sol.countPairs(root, 3))
+
+
