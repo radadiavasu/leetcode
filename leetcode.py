@@ -1906,3 +1906,116 @@ The chef is busy until time 8. The chef starts preparing the order at time 8.
 # print(sol.countPairs(root, 3))
 
 
+# def map_and_sort(mapping, nums):
+#     def get_mapped_value(num):
+#         str_num = str(num)
+#         mapped_str = ''.join(str(mapping[int(digit)]) for digit in str_num)
+#         return str(mapped_str)
+
+#     mapped_nums = [(num, get_mapped_value(num)) for num in nums]
+    
+#     mapped_nums.sort(key=lambda x: x[1])
+    
+#     final = [num for num, _ in mapped_nums]
+#     return final
+# mapping = [5,6,8,7,4,0,3,1,9,2]
+# nums = [7686,97012948,84234023,2212638,99]
+# print(map_and_sort(mapping, nums))
+
+
+# from typing import List
+
+
+# def sortArray(nums: List[int]) -> List[int]:
+
+#     if len(nums) > 1:
+#         left = nums[:len(nums)//2]
+#         right = nums[len(nums)//2:]
+
+#         sortArray(left)
+#         sortArray(right)
+        
+#         i = j = k = 0
+        
+#         while i < len(left) and j < len(right):
+#             if left[i] < right[j]:
+#                 nums[k] = left[i]
+#                 i +=1
+#             else:
+#                 nums[k] = right[j]
+#                 j +=1
+#             k +=1
+            
+#         while i < len(left):
+#             nums[k] = left[i]
+#             i +=1
+#             k +=1
+            
+#         while j < len(right):
+#             nums[k] = right[j]
+#             j +=1
+#             k +=1
+            
+#     return nums
+        
+# nums = [5,1,1,2,0,0]
+# obj = sortArray(nums)
+
+# print(obj)
+
+
+# def find_city_floyd_warshall(n, edges, distanceThreshold):
+#     distance = [[float("inf")] * n for _ in range(n)]
+    
+#     for i in range(n):
+#         distance[i][i] = 0
+        
+#     for u, v, w in edges:
+#         distance[u][v] = w
+#         distance[v][u] = w
+        
+#     for k in range(n):
+#         for i in range(n):
+#             for j in range(n):
+#                 if distance[i][k] + distance[k][j] < distance[i][j]:
+#                     distance[i][j] = distance[i][k] + distance[k][j]
+                    
+#     min_dist = float("inf")
+#     city = -1
+#     for i in range(n):
+#         curr_city = sum(1 for j in range(n) if distance[i][j] <= distanceThreshold)
+#         if curr_city <= min_dist:
+#             min_dist = curr_city
+#             city = i
+    
+#     return city
+
+
+# n = 4
+# edges = [[0,1,3],[1,2,1],[1,3,4],[2,3,1]]
+# distanceThreshold = 4
+# print(find_city_floyd_warshall(n, edges, distanceThreshold))
+
+
+# details = ["1313579440F2036","2921522980M5644"]
+
+# stack = []
+# for i in range(len(details)):
+#     p = int(details[i][11:13])
+#     stack.append(p)
+#     if p <= 60:
+#         stack.pop()
+# if len(stack) == 0:
+#     print(0)
+# else:
+#     print(len(stack))
+
+details = ["1313579440F2036","2921522980M5644"]
+
+
+count = 0
+for i in range(len(details)):
+    if int(details[i][11:13]) > 60:
+        count += 1
+        # print(count)
+print(count)
