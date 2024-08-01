@@ -1906,21 +1906,9 @@ The chef is busy until time 8. The chef starts preparing the order at time 8.
 # print(sol.countPairs(root, 3))
 
 
-# def map_and_sort(mapping, nums):
-#     def get_mapped_value(num):
-#         str_num = str(num)
-#         mapped_str = ''.join(str(mapping[int(digit)]) for digit in str_num)
-#         return str(mapped_str)
-
-#     mapped_nums = [(num, get_mapped_value(num)) for num in nums]
-    
-#     mapped_nums.sort(key=lambda x: x[1])
-    
-#     final = [num for num, _ in mapped_nums]
-#     return final
-# mapping = [5,6,8,7,4,0,3,1,9,2]
-# nums = [7686,97012948,84234023,2212638,99]
-# print(map_and_sort(mapping, nums))
+#-------------->
+# Sort The Array
+#<--------------
 
 
 # from typing import List
@@ -1964,6 +1952,11 @@ The chef is busy until time 8. The chef starts preparing the order at time 8.
 # print(obj)
 
 
+#---------------------------------------------------------------------------
+# Find the City With the Smallest Number of Neighbors at a Threshold Distance
+#<---------------------------------------------------------------------------
+
+
 # def find_city_floyd_warshall(n, edges, distanceThreshold):
 #     distance = [[float("inf")] * n for _ in range(n)]
     
@@ -1980,7 +1973,7 @@ The chef is busy until time 8. The chef starts preparing the order at time 8.
 #                 if distance[i][k] + distance[k][j] < distance[i][j]:
 #                     distance[i][j] = distance[i][k] + distance[k][j]
                     
-#     min_dist = float("inf")
+#     min_dist = float("inf") 
 #     city = -1
 #     for i in range(n):
 #         curr_city = sum(1 for j in range(n) if distance[i][j] <= distanceThreshold)
@@ -1997,7 +1990,12 @@ The chef is busy until time 8. The chef starts preparing the order at time 8.
 # print(find_city_floyd_warshall(n, edges, distanceThreshold))
 
 
-# details = ["1313579440F2036","2921522980M5644"]
+# ------------------------>
+# Number of Senior Citizens
+# <------------------------
+
+
+# details = ["1313579440F2036","2921522980M5644", "2347985643F6709"]
 
 # stack = []
 # for i in range(len(details)):
@@ -2005,17 +2003,23 @@ The chef is busy until time 8. The chef starts preparing the order at time 8.
 #     stack.append(p)
 #     if p <= 60:
 #         stack.pop()
+# print(stack)
 # if len(stack) == 0:
 #     print(0)
 # else:
 #     print(len(stack))
 
-details = ["1313579440F2036","2921522980M5644"]
+
+# Second Method
+
+# details = ["1313579440F2036","2921522980M5644"]
 
 
-count = 0
-for i in range(len(details)):
-    if int(details[i][11:13]) > 60:
-        count += 1
-        # print(count)
-print(count)
+# count = 0
+# for i in range(len(details)):
+#     if int(details[i][11:13]) > 60:
+#         count += 1
+#         # print(count)
+# print(count)
+
+
