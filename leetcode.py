@@ -2023,3 +2023,30 @@ The chef is busy until time 8. The chef starts preparing the order at time 8.
 # print(count)
 
 
+nums = [0,1,0,1,1,0,0]
+
+ones = nums.count(1)
+if ones  == 0:
+    print(0)
+# print(ones)
+
+length = 0
+
+for _ in range(nums):
+    length += 1
+
+nums = nums + nums
+# print(nums)
+
+max_ones = 0
+curr_ones = 0
+
+for i in range(ones):
+    curr_ones  += nums[i]
+    # print(nums[i])
+    print(curr_ones)
+max_ones = curr_ones
+print(max_ones)
+
+for i in range(ones, length(nums)):
+    
