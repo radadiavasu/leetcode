@@ -308,7 +308,11 @@
 
 # print(ans)
 
+
+#----------------------------------------------------------------->
 # Find all Duplicate elements in an array (return only duplicates.)
+#<-----------------------------------------------------------------
+
 # a = [1,1,2,3,4]
 # import collections
 # print([item for item, count in collections.Counter(a).items() if count > 1])
@@ -2023,30 +2027,77 @@ The chef is busy until time 8. The chef starts preparing the order at time 8.
 # print(count)
 
 
-nums = [0,1,0,1,1,0,0]
+#------------------------------------------>
+# Minimum Swaps to Group All 1's Together II
+#<------------------------------------------
 
-ones = nums.count(1)
-if ones  == 0:
-    print(0)
-# print(ones)
-
-length = 0
-
-for _ in range(nums):
-    length += 1
-
-nums = nums + nums
-# print(nums)
-
-max_ones = 0
-curr_ones = 0
-
-for i in range(ones):
-    curr_ones  += nums[i]
-    # print(nums[i])
-    print(curr_ones)
-max_ones = curr_ones
-print(max_ones)
-
-for i in range(ones, length(nums)):
+# class Soltion:
     
+#     @staticmethod
+#     def count_lengths(nums):
+        
+#         length = 0
+
+#         for _ in nums:
+#             length += 1
+#         return length
+    
+#     def count_1(nums):
+#         ones = sum(nums)
+#         # print(ones)
+#         if ones  == 0:
+#             return (0)
+#         # print(nums)
+#         nums = nums + nums
+
+#         max_ones = 0
+#         curr_ones = 0
+#         total_len = Soltion.count_lengths(nums)
+
+#         for i in range(ones):
+#             curr_ones  += nums[i]
+#             # print(nums[i])
+#             # print(curr_ones)
+#         max_ones = curr_ones
+#         # print(max_ones)
+
+#         for i in range(ones, total_len):
+#             curr_ones += nums[i] - nums[i - ones]
+#             # print(curr_ones)
+#             max_ones = max(max_ones, curr_ones)
+            
+#         return (ones - max_ones)
+
+# nums = [0,1,0,1,1,0,0]
+# obj = Soltion.count_1(nums)
+# print(obj)
+
+
+#---------------------------->
+# Sort Characters By Frequency
+#<----------------------------
+
+# from collections import Counter
+
+# arr = ["d","b","c","b","c","a"]; k = 2
+
+# ans = Counter(arr)
+# print(ans)
+# store = [num for num in arr if ans[num] == 1]
+# if len(store) >= k:
+#     print(store[k - 1])
+# else:
+#     print("")
+
+
+# Second Method
+
+# arr = ["d","b","c","b","c","a"]; k = 2
+
+# store = {}
+# count = 0
+# for i in arr:
+#     if i in store:
+#         count += 1
+#     store[i] = store.get(i, 0) + 1
+# print(store)
