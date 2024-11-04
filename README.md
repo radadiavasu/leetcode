@@ -18,6 +18,4 @@
 
 # 👀 My Profile
 
-``` bash
-    https://leetcode.com/u/vasuradadia2002/
-```
+https://leetcode.com/u/vasuradadia2002/
