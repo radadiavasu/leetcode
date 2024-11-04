@@ -2404,40 +2404,6 @@ The chef is busy until time 8. The chef starts preparing the order at time 8.
 # return ''.join(snums)
 
 
-# s = "leetcode exercises sound delightful" # True
-# s = "Leetcode eisc cool" # False
-# s = "IuTiUtGGsNydmacGduehPPGksKQyT TmOraUbCcQdnZUCpGCYtGp p pG GCcRvZDRawqGKOiBSLwjIDOjdhnHiisfddYoeHqxOqkUvOEyI" # True
-# s = "Leetcode is cool" # False
-# s = "ab bbb" # False
-# s = "eetcode" # True
-# t = s.split()
-# ans = False
-# count = 0
-
-# if " " not in s:
-#     if s[0] == s[-1]:
-#         ans = True
-# else:
-#     for i in range(len(s)):
-#         if s[0] != s[-1]:
-#             ans = False
-#             count += 1
-#         elif s[0].isupper() == s[-1].islower():
-#             ans = False
-#             count += 1
-#         elif s[i] == " ":
-#             if s[i-1] == s[i+1]:
-#                 if s[i-1].isupper() == s[i+1].isupper():
-#                     ans = True
-#                     count += 1
-#             else:
-#                 ans = False
-#                 break
-#             count += 1
-
-# print(ans)
-
-
 # ----------------->
 # Circular Sentence
 # <----------------
