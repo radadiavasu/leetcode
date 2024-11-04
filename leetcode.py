@@ -2101,3 +2101,371 @@ The chef is busy until time 8. The chef starts preparing the order at time 8.
 #         count += 1
 #     store[i] = store.get(i, 0) + 1
 # print(store)
+
+
+# from collections import Counter
+# import heapq
+
+# # word = "alporfmdqsbhncwyu" # 27 Correct
+# word = "abcde" # 5 Correct
+# word = "xyzxyzxyzxyz" # 12 Correct
+# word = "aabbccddeeffgghhiiiiii" # 24 Correct
+
+# ans = Counter(word)
+
+# freq = [(-freq, char) for char, freq in ans.items()]
+# # print(freq)
+# heapq.heapify(freq)
+
+# total_cost = 0
+# j = 1
+
+# while freq:
+#     f, char = heapq.heappop(freq)
+#     f = -f
+
+#     if j <= 8:
+#         total_cost += f
+#     elif j <= 16:
+#         total_cost += f * 2
+#     elif j <= 24:
+#         total_cost += f * 3
+#     else:
+#         total_cost += f * 4
+    
+#     j+=1
+    
+# print(total_cost)
+
+
+#------------------------>
+# Integer to English Words
+#<------------------------
+
+# def numberToWords(num):
+#     total = { 0 : 'Zero', 1 : 'One', 2 : 'Two', 3 : 'Three', 4 : 'Four', 5 : 'Five',
+#           6 : 'Six', 7 : 'Seven', 8 : 'Eight', 9 : 'Nine', 10 : 'Ten',
+#           11 : 'Eleven', 12 : 'Twelve', 13 : 'Thirteen', 14 : 'Fourteen',
+#           15 : 'Fifteen', 16 : 'Sixteen', 17 : 'Seventeen', 18 : 'Eighteen',
+#           19 : 'Nineteen', 20 : 'Twenty',
+#           30 : 'Thirty', 40 : 'Forty', 50 : 'Fifty', 60 : 'Sixty',
+#           70 : 'Seventy', 80 : 'Eighty', 90 : 'Ninety' }
+#     thousand = 1000
+#     million = thousand * 1000
+#     bilion = million * 1000
+#     trilion = bilion * 1000
+
+#     assert(0 <= num)
+
+#     if (num < 20):
+#         return total[num]
+
+#     if (num < 100):
+#         if num % 10 == 0: return total[num]
+#         else: return total[num // 10 * 10] + ' ' + total[num % 10]
+
+#     if (num < thousand):
+#         if num % 100 == 0: return total[num // 100] + ' Hundred'
+#         else: return total[num // 100] + ' Hundred ' + numberToWords(num % 100)
+
+#     if (num < million):
+#         if num % thousand == 0: return numberToWords(num // thousand) + ' Thousand'
+#         else: return numberToWords(num // thousand) + ' Thousand ' + numberToWords(num % thousand)
+
+#     if (num < bilion):
+#         if (num % million) == 0: return numberToWords(num // million) + ' Million'
+#         else: return numberToWords(num // million) + ' Million ' + numberToWords(num % million)
+
+#     if (num < trilion):
+#         if (num % bilion) == 0: return numberToWords(num // bilion) + ' Billion'
+#         else: return numberToWords(num // bilion) + ' Billion ' + numberToWords(num % bilion)
+
+#     if (num % trilion == 0): return numberToWords(num // trilion) + ' Trillion'
+#     else: return numberToWords(num // trilion) + ' Trillion ' + numberToWords(num % trilion)
+
+# print(numberToWords(12345657))
+
+
+# ------------------------>
+# Don't know very S.O.R.R.Y
+#< ------------------------
+
+# def comb(candidates, target):
+#     # candidates = sorted(list(candidates))
+#     candidates.sort()
+#     combs = []
+#     ans = []
+#     n = len(candidates)
+#     def backtrack(i, sums):
+#         if sums == target:
+#             combs.append(ans.copy())
+#             return
+#         elif sums > target:
+#             return
+#         for j in range(i, n):
+#             if j > i and candidates[j] == candidates[j - 1]:
+#                 continue
+#             ans.append(candidates[j])
+#             backtrack(j+1, sums + candidates[j])
+#             ans.pop()
+#     backtrack(0, 0)
+#     return combs
+
+# candidates = [10,1,2,7,6,1,5]; target = 8
+# ans = comb(candidates, target)
+
+# if len(ans) <= 0:
+#     print("Null")
+
+# for i in range(len(ans)):
+ 
+#     print("[[", end='')
+#     for j in range(len(ans[i])):
+#         print(str(ans[i][j])+" ", end='')
+#     print("]]", end=' ')
+
+
+# ------------------------>
+# Don't know very S.O.R.R.Y
+#< ------------------------
+
+# def countpairs(nums, mid):
+#     count = 0
+#     j = 0
+#     for i in range(len(nums)):
+#         while j < len(nums) and nums[j] - nums[i] <= mid:
+#             j += 1
+#         count += (j-i-1)
+#     return count
+
+# def smallestpairs(nums, k):
+#     nums.sort()
+#     l, h = 0, nums[-1] - nums[0]
+    
+#     while l < h:
+#         mid = (l+h)//2
+#         print(h//2)
+#         # print(mid)
+#         if countpairs(nums, mid) >= k:
+#             h = mid
+#         else:
+#             l = mid + 1
+#     return l
+
+# nums = [1, 3, 1]; k = 1
+# smallestpairs(nums, k)
+# print(obj)
+# print(2//2)
+# test_cases = [
+#     ([1, 3, 1], 1),  # Expected output: 0
+#     ([1, 1, 1], 2),  # Expected output: 0
+#     ([1, 6, 1], 3)   # Expected output: 5
+# ]
+
+# results = [smallestpairs(nums, k) for nums, k in test_cases]
+# print(results)
+
+# nums = [1,2,3]
+# n = list(set(nums))
+
+# length = len(n)
+
+# n.sort(reverse=True)
+
+# if length >= 3:
+#     print(n[2])
+# else:
+#     print(n[0])
+
+
+# ------------------------>
+# Don't know very S.O.R.R.Y
+#< ------------------------
+
+# list1 = ["Shogun","Tapioca Express","Burger King","KFC"]
+# list2 = ["KFC","Shogun","Burger King"]
+# list1 = ["happy","sad","good"]
+# list2 = ["sad","happy","good"]
+
+# first = set(list1)
+# sec = set(list2)
+
+# ans = first.intersection(sec)
+
+# if ans:
+#     print(list(ans))
+
+# d = []
+
+# for i in list1:
+#     for j in list2:
+#         if list1[i] == list2[i]:
+#             d.append(list2)
+# print(d)
+
+
+# num = 5
+
+# c = 1
+
+# while num*2 > c:
+#     num = num ^ c
+#     c = c << 1
+# print(num)
+
+
+#-------------------------------------------->
+# Find the Student that Will Replace the Chalk
+#<--------------------------------------------
+
+# chalk = [5,1,5]; k = 22
+
+# """Logic
+
+# student 0 pick 5 chalk, so k = 17
+# student 1 pick 1 chalk, so k = 16
+# student 2 pick 5 chalk, so k = 11
+# student 0 pick 5 chalk, so k = 6
+# student 1 pick 1 chalk, so k = 5
+# student 2 pick 5 chalk, so k = 0
+
+# """
+
+# if k >= sum(chalk):
+#     k = k % sum(chalk)
+
+# for i in range(len(chalk)):
+#     if k < chalk[i]:
+#         print(i)
+#     else:
+#         k -= chalk[i]
+
+
+#------------------------------------->
+# Sum of Digits of String After Convert
+#<-------------------------------------
+
+# together = {
+#             'a': 1,'b': 2,'c': 3,'d': 4,'e': 5,'f': 6,'g': 7,'h': 8,'i': 9,'j': 10,
+#             'k': 11,'l': 12,'m': 13,'n':  14,'o': 15,'p': 16,'q': 17,'r': 18,'s': 19,
+#             't': 20,'u': 21,'v': 22,'w': 23,'x': 24,'y':25,'z':26
+# }
+
+# s = 'xyz'; k = 2
+
+# store = ''
+# for i in s:
+#     if i in together:
+#         store += str(together[i])
+#         # print(store)
+        
+# summs = sum(int(val) for val in store)
+# # print(summs)
+
+# while k > 1:
+#     summs = sum(int(val) for val in str(summs))
+#     k -= 1
+# print(summs)
+
+
+# ------------------------>
+# Don't know very S.O.R.R.Y
+#< ------------------------
+
+# from functools import cmp_to_key
+
+    
+# def largestnumber(nums):
+
+#     result = [str(num) for num in nums]
+
+#     result.sort(key=cmp_to_key(func))
+
+#     if result[0] == '0':
+#         return '0'
+
+#     return ''.join(result)
+
+# def func(a,b):
+#     if a+b > b+a:
+#         return -1
+#     else:
+#         return 1
+
+# nums = [3,30,34,5,9]    
+# snums = list(map(str, nums))
+# print(snums)
+# snums.sort(key=lambda x: x*10, reverse = True)
+# print(snums)
+
+# if snums[0] == "0":
+#     return "0"
+
+# return ''.join(snums)
+
+
+# s = "leetcode exercises sound delightful" # True
+# s = "Leetcode eisc cool" # False
+# s = "IuTiUtGGsNydmacGduehPPGksKQyT TmOraUbCcQdnZUCpGCYtGp p pG GCcRvZDRawqGKOiBSLwjIDOjdhnHiisfddYoeHqxOqkUvOEyI" # True
+# s = "Leetcode is cool" # False
+# s = "ab bbb" # False
+# s = "eetcode" # True
+# t = s.split()
+# ans = False
+# count = 0
+
+# if " " not in s:
+#     if s[0] == s[-1]:
+#         ans = True
+# else:
+#     for i in range(len(s)):
+#         if s[0] != s[-1]:
+#             ans = False
+#             count += 1
+#         elif s[0].isupper() == s[-1].islower():
+#             ans = False
+#             count += 1
+#         elif s[i] == " ":
+#             if s[i-1] == s[i+1]:
+#                 if s[i-1].isupper() == s[i+1].isupper():
+#                     ans = True
+#                     count += 1
+#             else:
+#                 ans = False
+#                 break
+#             count += 1
+
+# print(ans)
+
+
+# ----------------->
+# Circular Sentence
+# <----------------
+
+# s = "leetcode exercises sound delightful" # True
+# s = "Leetcode eisc cool" # False
+# s = "IuTiUtGGsNydmacGduehPPGksKQyT TmOraUbCcQdnZUCpGCYtGp p pG GCcRvZDRawqGKOiBSLwjIDOjdhnHiisfddYoeHqxOqkUvOEyI" # True
+# s = "Leetcode is cool" # False
+s = "ab bbb" # False
+# s = "eetcode" # True
+ans = False
+count = 0
+
+if " " not in s:
+    if s[0] == s[-1]:
+        ans = True
+else:
+    for i in range(len(s)):
+        if s[0] != s[-1] or s[0].isupper() == s[-1].islower():
+            ans = False
+            count += 1
+        elif s[i] == " ":
+            if s[i-1] == s[i+1] and s[i-1].isupper() == s[i+1].isupper():
+                ans = True
+                count += 1
+            else:
+                ans = False
+                break
+            count += 1
+
+print(ans)
